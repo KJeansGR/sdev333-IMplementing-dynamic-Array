@@ -28,7 +28,7 @@ public class DynamicStringList implements StringList{
     }
 
     public void add(String word){
-        if (word == null || word.length == 0) {
+        if (word == null || word.length() == 0) {
             throw new IllegalArgumentException("cannot be null or empty");
         }
         if (size + 1 > capacity) {
