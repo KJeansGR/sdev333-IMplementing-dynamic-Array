@@ -39,7 +39,12 @@ public class DynamicStringList implements StringList{
 
     }
     public String remove(int index){
-        return "";
+        if (index > size || index < 0) {
+            throw new IllegalArgumentException("index out of bounds");
+        }
+        String word = backingArray[index];
+        size --;
+        return word;
     }
       public int size(){
         return size;
