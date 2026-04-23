@@ -18,13 +18,14 @@ public class DynamicStringList implements StringList{
         if (index > size) {
             throw new IllegalArgumentException("index out of bounds");
         }
-
         return backingArray[index];
-
     }
-  public void set(int index, String value){
-
-  }
+    public void set(int index, String value){
+        if (index > size || index < 0) {
+            throw new IllegalArgumentException("index out of bounds");
+        }
+        backingArray[index] = value;
+    }
 
     public void add(String word){
 
