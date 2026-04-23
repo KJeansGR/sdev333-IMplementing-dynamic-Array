@@ -3,12 +3,15 @@ public class DynamicStringList implements StringList{
     
     String[] backingArray;
     int size = 0;
+    int capacity = 10;
 
     public DynamicStringList(int size){
         backingArray = new String[size];
+        capacity = size;
     }
     public DynamicStringList(){
-        backingArray = new String[10];
+        backingArray = new String[capacity];
+        
     }
 
     public String get(int index) {
@@ -19,6 +22,21 @@ public class DynamicStringList implements StringList{
         return backingArray[index];
 
     }
+  public void set(int index, String value){
 
+  }
 
+    public void add(String word){
+
+    }
+    public String remove(int index){
+        return "";
+    }
+      public int size(){
+        return size;
+      }
+
+      public int capacity(){
+        return capacity;
+      }
 }
