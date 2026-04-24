@@ -9,11 +9,18 @@ public class DynamicStringListTest {
         DynamicStringList list = new DynamicStringList();
         assertEquals(list.size(), 0);
     }
-        @Test
+    @Test
     public void testConstructorWithInput(){
 
         DynamicStringList list = new DynamicStringList(100);
         assertEquals(list.capacity(), 100);
+    }
+    @Test
+    public void testAddWithSize() {
+        DynamicStringList list = new DynamicStringList();
+        list.add("Apple");
+        list.add("Strawberry");
+        assertEquals(2, list.size());
     }
 
 }

@@ -15,21 +15,21 @@ public class DynamicStringList implements StringList{
     }
 
     public String get(int index) {
-        if (index > size) {
-            throw new IllegalArgumentException("index out of bounds");
+        if (index >= size || index < 0) {
+            throw new IndexOutOfBoundsException("index out of bounds");
         }
         return backingArray[index];
     }
     public void set(int index, String value){
-        if (index > size || index < 0) {
-            throw new IllegalArgumentException("index out of bounds");
+        if (index >= size || index < 0) {
+            throw new IndexOutOfBoundsException("index out of bounds");
         }
         backingArray[index] = value;
     }
 
     public void add(String word){
         if (word == null || word.length() == 0) {
-            throw new IllegalArgumentException("cannot be null or empty");
+            throw new IndexOutOfBoundsException("cannot be null or empty");
         }
         if (size + 1 > capacity) {
             throw new IndexOutOfBoundsException("no more capacity");
@@ -39,8 +39,8 @@ public class DynamicStringList implements StringList{
 
     }
     public String remove(int index){
-        if (index > size || index < 0) {
-            throw new IllegalArgumentException("index out of bounds");
+        if (index >= size || index < 0) {
+            throw new IndexOutOfBoundsException("index out of bounds");
         }
         String word = backingArray[index];
         size --;
